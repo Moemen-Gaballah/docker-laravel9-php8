@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql
+    container_name: database
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+#    environment:
+#      MYSQL_ROOT_PASSWORD: secret
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: MYSQL_DATABASE
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+
+    volumes:
+      - ./database:/var/lib/mysql
+    ports:
+      - '3306:3306'
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+    depends_on:
+      - database
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8082:80'
+    restart: always
+    environment:
+      PMA_HOST: database
+    depends_on:
+      - database
+
+  php-apache:
+    container_name: php-apache
+    build:
+      context: ./php
+    ports:
+      - '8080:80'
+    volumes:
+      - ./src:/var/www/laravel_docker
+      - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+    depends_on:
+      - database

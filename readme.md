@@ -15,10 +15,10 @@
  #Password Database\
 ===============================
 
-1- DB_HOST=`database`
-2- DB_PORT=`3306`
-3- DB_DATABASE=`MYSQL_DATABASE`
-4- DB_USERNAME=`MYSQL_USER`
+1- DB_HOST=`database`\
+2- DB_PORT=`3306`\
+3- DB_DATABASE=`MYSQL_DATABASE`\
+4- DB_USERNAME=`MYSQL_USER`\
 5- DB_PASSWORD=`MYSQL_PASSWORD`
 
 

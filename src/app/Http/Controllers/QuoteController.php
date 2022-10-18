@@ -9,6 +9,9 @@ class QuoteController extends Controller
 {
     public function index(){
 
+            dd(request()->getHttpHost());
+
+
         return view('quotes.index', ['quotes' => Quote::all()]);
     }
 }

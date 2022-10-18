@@ -1,2 +1,5 @@
 GRANT ALL PRIVILEGES ON *.* TO 'MYSQL_USER'@'%';
 FLUSH PRIVILEGES; // to save all change PRIVILEGES
+
+2- Running virtual hosts in apache docker container
+https://stackoverflow.com/questions/55939079/running-virtual-hosts-in-apache-docker-container

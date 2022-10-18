@@ -41,10 +41,14 @@ services:
 
   php-apache:
     container_name: php-apache
+    extra_hosts:
+      - "lara.local:127.0.0.1"
+    hostname: lara.local
+    domainname: local
     build:
       context: ./php
     ports:
-      - '8080:80'
+      - '80:80'
     volumes:
       - ./src:/var/www/laravel_docker
       - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf

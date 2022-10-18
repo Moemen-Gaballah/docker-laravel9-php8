@@ -5,7 +5,7 @@
 # Instructions
 1- `docker-compose up -d --build`
 
-2- url for app `http://localhost:8080/`
+2- url for app `http://localhost:80/  Or http://lara.local/`
 
 3- url for phpmyadmin `http://localhost:8082/`
 
@@ -20,5 +20,9 @@
 4- DB_USERNAME=`MYSQL_USER`\
 5- DB_PASSWORD=`MYSQL_PASSWORD`
 
+
+# add virual host for my app `http://lara.local/`
+
+## ![running-virtual-hosts-in-apache-docker-container](`https://stackoverflow.com/questions/55939079/running-virtual-hosts-in-apache-docker-container`)
 
 

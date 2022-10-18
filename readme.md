@@ -1,6 +1,6 @@
 # How to Get Started With Docker and Laravel
 ## notes: (this article has some issues but good any way).
-## ![https://www.twilio.com/blog/get-started-docker-laravel](`https://www.twilio.com/blog/get-started-docker-laravel`)
+## ![get started docker laravel article](`https://www.twilio.com/blog/get-started-docker-laravel`)
 
 # Instructions
 1- `docker-compose up -d --build`
@@ -22,7 +22,8 @@
 
 
 # add virual host for my app `http://lara.local/`
+## note must update your file host add `127.0.0.1 	lara.local`
 
-## ![running-virtual-hosts-in-apache-docker-container](`https://stackoverflow.com/questions/55939079/running-virtual-hosts-in-apache-docker-container`)
+## ![running virtual hosts in apache docker container example](`https://stackoverflow.com/questions/55939079/running-virtual-hosts-in-apache-docker-container`)
 
 
